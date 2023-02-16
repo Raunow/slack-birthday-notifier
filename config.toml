@@ -1,0 +1,15 @@
+[csv]
+path = "./bdays.csv"
+date_separator = '/'
+date_format = "day_month" # alt: month_day
+
+[slack]
+enabled = false
+channel_id = ""
+webhook_url = ""
+
+[warning]
+enabled = false
+channel_id = ""
+number_of_days_warning = 7
+webhook_url = ""
