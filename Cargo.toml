@@ -1,5 +1,5 @@
 [package]
-name = "birthday-notifier"
+name = "slack-birthday-notifier"
 version = "0.1.0"
 edition = "2021"
 
