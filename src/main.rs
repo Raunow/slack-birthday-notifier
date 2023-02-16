@@ -91,7 +91,7 @@ fn match_dates(
 
 fn slack_format(tags: Vec<BirthdayRow>, birthday_message: &str) -> String {
     format!(
-        "{}<@{}>",
+        "{} <@{}>",
         birthday_message,
         tags.iter()
             .map(|b| b.tag.to_string())
@@ -119,15 +119,16 @@ fn main() {
         match_dates(iter, cfg.warning.number_of_days_warning, &cfg.csv);
 
     if !current_birthdays.is_empty() {
-        let birthday_message = if current_birthdays.len() == 1 {
-            "Happy birthday"
-        } else if current_birthdays.len() == 2 {
-            "Happy birthday to you both!"
-        } else {
-            "Happy birthday to you all!"
-        };
+        let birthday_message = "Happy birthday 🎉🇩🇰".to_owned()
+            + if current_birthdays.len() == 1 {
+                ""
+            } else if current_birthdays.len() == 2 {
+                " to you both!"
+            } else {
+                " to you all!"
+            };
 
-        let message = slack_format(current_birthdays, birthday_message);
+        let message = slack_format(current_birthdays, birthday_message.as_str());
         println!("{}", &message.yellow());
         if cfg.slack.enabled {
             if let (Some(url), Some(channel_id)) = (cfg.slack.webhook_url, cfg.slack.channel_id) {

@@ -1,4 +1,0 @@
-- message formatting
-- warning message formatting
-- slack tagging logic
-- Potentially rewrite to use bot token instead of webhook.

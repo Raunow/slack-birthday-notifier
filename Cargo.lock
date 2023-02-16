@@ -35,19 +35,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "a4a4ddaa51a5bc52a6948f74c06d20aaaddb71924eab79b8c97a8c556e942d6a"
 
 [[package]]
-name = "birthday-notifier"
-version = "0.1.0"
-dependencies = [
- "chrono",
- "colored",
- "csv",
- "reqwest",
- "serde",
- "serde_json",
- "toml",
-]
-
-[[package]]
 name = "bitflags"
 version = "1.3.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -864,6 +851,19 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "4614a76b2a8be0058caa9dbbaf66d988527d86d003c11a94fbd335d7661edcef"
 dependencies = [
  "autocfg",
+]
+
+[[package]]
+name = "slack-birthday-notifier"
+version = "0.1.0"
+dependencies = [
+ "chrono",
+ "colored",
+ "csv",
+ "reqwest",
+ "serde",
+ "serde_json",
+ "toml",
 ]
 
 [[package]]
